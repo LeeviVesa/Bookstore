@@ -25,4 +25,20 @@ public class BookController {
             return "listbooks";
 
     }
+    @RequestMapping(value = "/delete/{isbn}", method = RequestMethod.GET)
+    public String deleteStudent(@PathVariable("isbn") Long isbn, Model model) {
+        repository.delete(isbn);
+        return "redirect:../listbooks";
+    }
+    @RequestMapping(value = "/add")
+    public String addBook(Model model){
+        model.addAttribute("book", new Book());
+        return "addbook";
+    }
+
+    @RequestMapping(value = "/save", method = RequestMethod.POST)
+    public String save(Book book){
+        repository.save(book);
+        return "redirect:listbooks";
+    }
 }
