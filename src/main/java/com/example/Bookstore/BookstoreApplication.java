@@ -20,13 +20,13 @@ public class BookstoreApplication {
 	@Bean
 	public CommandLineRunner studentDemo(BookRepository repository) {
 		long isbn = 1;
-		long isbn2 = 2;
+		long isbnn = 2;
 		return (args) -> {
 			log.info("save books");
-			repository.save(new Book("Matey", "Pepperson", 10810, 3018, isbn2));
-			repository.save(new Book("Katy", "Kateson", 1080, 1999, isbn));
+			repository.save(new Book("BlueMoon", "Katy Kateson", 1080, 1999, isbn));
+            repository.save(new Book("BlueMoon2", "Katy Kateson2", 10802, 19992, isbnn));
 
-			log.info("fetch all students");
+			log.info("fetch all books");
 			for (Book book : repository.findAll()) {
 				log.info(book.toString());
 			}
