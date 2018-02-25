@@ -26,7 +26,7 @@ public class BookController {
 
     }
     @RequestMapping(value = "/delete/{isbn}", method = RequestMethod.GET)
-    public String deleteStudent(@PathVariable("isbn") Long isbn, Model model) {
+    public String deleteBook(@PathVariable("isbn") Long isbn, Model model) {
         repository.delete(isbn);
         return "redirect:../listbooks";
     }
