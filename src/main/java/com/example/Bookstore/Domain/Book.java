@@ -9,6 +9,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Book {
     @Id
@@ -70,6 +71,6 @@ public class Book {
     }
     @Override
     public String toString() {
-        return "MyFriends [isbn=" + isbn + ", title=" + title + ", author=" + author + ", price=" + price + ", year=" + year + "]";
+        return "Books [isbn=" + isbn + ", title=" + title + ", author=" + author + ", price=" + price + ", year=" + year + "]";
     }
 }

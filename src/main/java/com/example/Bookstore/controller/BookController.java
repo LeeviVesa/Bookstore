@@ -11,4 +11,8 @@ public class BookController {
     public String home() {
         return "index";
     }
+    @RequestMapping("/listbooks")
+    public String listbooks() {
+        return "listbooks";
+    }
 }
