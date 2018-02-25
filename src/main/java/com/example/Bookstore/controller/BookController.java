@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.example.Bookstore.Domain.Book;
 import com.example.Bookstore.Domain.BookRepository;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.List;
 
 @Controller
 public class BookController {
@@ -40,5 +43,16 @@ public class BookController {
     public String save(Book book){
         repository.save(book);
         return "redirect:listbooks";
+    }
+    //restful haku kaikesta
+    @RequestMapping(value="/books", method = RequestMethod.GET)
+    public @ResponseBody
+    List<Book> studentListRest() {
+        return (List<Book>) repository.findAll();
+    }
+    //restful haku isbn koodin mukaan
+    @RequestMapping(value="/book/{isbn}", method = RequestMethod.GET)
+    public @ResponseBody Book findStudentRest(@PathVariable("isbn") Long isbn) {
+        return repository.findOne(isbn);
     }
 }
