@@ -17,6 +17,10 @@ import java.util.List;
 public class BookController {
     @Autowired
     private BookRepository repository;
+    @RequestMapping("/login")
+    public String login() {
+        return "login";
+    }
     @RequestMapping("/index")
     public String home() {
         return "index";
