@@ -35,6 +35,7 @@ public class UserController {
      * @param bindingResult
      * @return
      */
+
     @RequestMapping(value = "saveuser", method = RequestMethod.POST)
     public String save(@Valid @ModelAttribute("signupform") SignUpForm SignUpForm, BindingResult bindingResult) {
         if (!bindingResult.hasErrors()) { // validation errors
