@@ -19,7 +19,7 @@ public class BookstoreApplication {
 		SpringApplication.run(BookstoreApplication.class, args);
 	}
 	@Bean
-	public CommandLineRunner studentDemo(BookRepository repository, UserRepository urepository) {
+	public CommandLineRunner bookDemo(BookRepository repository, UserRepository urepository) {
 		long isbn = 1;
 		long isbnn = 2;
 		return (args) -> {
